@@ -1,0 +1,123 @@
+:root {
+  /* Define CSS variables for colors */
+  --nav-and-footer-bg-color: #0a2463;
+  --color: white;
+  --nav-link-hover-color: #d8315b;
+  --background-color: #fffaff;
+}
+
+* {
+  /* Reset margin, padding, and box-sizing for all elements */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  /* Set font for the body */
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+  /* Set background color */
+  background-color: var(--background-color);
+  /* Use flexbox to create a column layout */
+  display: flex;
+  flex-direction: column;
+  /* Ensure the body takes at least the full viewport height */
+  min-height: 100vh;
+}
+
+header {
+  /* Style the header with flexbox for alignment */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* Add padding */
+  padding: 10px 20px;
+  /* Set background color and text color */
+  background-color: var(--nav-and-footer-bg-color);
+  color: var(--color);
+}
+
+.logo {
+  /* Style the logo */
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.nav-links {
+  /* Remove default list styles */
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  /* Use flexbox for horizontal alignment of links */
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links a {
+  /* Style navigation links */
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+/* Style for hover effect on navigation links */
+.nav-links li:hover {
+  color: var(--nav-link-hover-color);
+  background-color: var(--background-color);
+}
+
+.hamburger {
+  /* Initially hide the hamburger menu icon */
+  display: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+main {
+  /* Allow the main content to grow and fill available space */
+  flex-grow: 1;
+  margin: 10px 20px;
+}
+
+footer {
+  /* Style the footer */
+  background-color: var(--nav-and-footer-bg-color);
+  color: var(--color);
+  padding: 20px 20px;
+  text-align: center;
+}
+
+/* Responsive styling for screens 768px wide or less */
+@media (max-width: 768px) {
+  .nav-links {
+    /* Hide navigation links on mobile */
+    display: none;
+    /* Use flexbox for vertical alignment */
+    flex-direction: column;
+    /* Position navigation links */
+    position: absolute;
+    top: 50px;
+    right: 0;
+    /* Set background color and full width */
+    background-color: var(--nav-and-footer-bg-color);
+    width: 100%;
+    text-align: center;
+  }
+
+  main.active {
+    /* Adjust margin and padding for main content when menu is active */
+    margin-top: 150px;
+    padding-top: 20px;
+  }
+
+  .nav-links.active {
+    /* Display navigation links when menu is active */
+    display: flex;
+  }
+
+  .hamburger {
+    /* Show hamburger menu icon on mobile */
+    display: block;
+  }
+}
